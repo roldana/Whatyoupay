@@ -6,6 +6,150 @@
     android:layout_height="match_parent"
     tools:context="com.example.alrol.whatyoupay.MainActivity">
 
+    <EditText
+        android:id="@+id/quantityInput6"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/priceInput6"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintStart_toEndOf="@+id/priceInput"
+        app:layout_constraintTop_toTopOf="@+id/priceInput6" />
+
+    <EditText
+        android:id="@+id/priceInput6"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceInput5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/quantityInput5"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/priceInput5"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintStart_toEndOf="@+id/priceInput"
+        app:layout_constraintTop_toTopOf="@+id/priceInput5" />
+
+    <EditText
+        android:id="@+id/priceInput5"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceInput4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/quantityInput4"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/priceInput4"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintStart_toEndOf="@+id/priceInput"
+        app:layout_constraintTop_toTopOf="@+id/priceInput4" />
+
+    <EditText
+        android:id="@+id/priceInput4"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceInput3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/quantityInput3"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/priceInput3"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintStart_toEndOf="@+id/priceInput"
+        app:layout_constraintTop_toTopOf="@+id/priceInput3" />
+
+    <EditText
+        android:id="@+id/priceInput3"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceInput2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/totalTextView"
         android:layout_width="wrap_content"
@@ -33,17 +177,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17000002" />
 
+    <EditText
+        android:id="@+id/priceInput2"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceInput"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/doneButton"
         style="@android:style/Widget.Material.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:onClick="calculate"
+        android:layout_marginTop="8dp"
         android:text="Done"
-        app:layout_constraintBottom_toBottomOf="@+id/priceInput"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/priceInput" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17000002" />
 
     <TextView
         android:id="@+id/totalPriceView"
@@ -77,6 +242,23 @@
         app:layout_constraintStart_toEndOf="@+id/priceInput"
         app:layout_constraintTop_toTopOf="@+id/priceInput" />
 
+    <EditText
+        android:id="@+id/quantityInput2"
+        android:layout_width="68dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/priceInput2"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintStart_toEndOf="@+id/priceInput"
+        app:layout_constraintTop_toTopOf="@+id/priceInput2" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -108,9 +290,28 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="(before tax + tax)"
+        android:text="$0.00 + $0.00 tax"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/totalPriceView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/totalPriceView" />
+
+    <Button
+        android:id="@+id/plusButton"
+        style="@android:style/Widget.Material.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="+"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/doneButton"
+        app:layout_constraintStart_toStartOf="@+id/doneButton"
+        app:layout_constraintTop_toBottomOf="@+id/doneButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
