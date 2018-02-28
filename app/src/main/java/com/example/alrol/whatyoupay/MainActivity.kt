@@ -9,10 +9,14 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    val SALES_TAX_RATE : Float = 13f
+
     private lateinit var totalPriceText : TextView
     private lateinit var priceInput: EditText
     private lateinit var quantityInput: EditText
     private lateinit var doneButton: Button
+    private lateinit var detailedPriceText : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,19 +26,29 @@ class MainActivity : AppCompatActivity() {
         quantityInput = findViewById(R.id.quantityInput)
         priceInput = findViewById(R.id.priceInput)
         doneButton = findViewById(R.id.doneButton)
+        detailedPriceText = findViewById(R.id.breakdown)
 
     }
 
     fun calculate(view: View) {
-        var price : Float
-        var qty : Float
-        var total : Float
 
-        price = priceInput.text.toString().toFloat()
-        qty = quantityInput.text.toString().toFloat()
-        total = (price*qty)*1.13f
+        var unitQuantity : Float
+        var unitCost : Float
+        var taxAmount : Float
+        var totalNetCost : Float
+        var totalCost : Float
 
-        totalPriceText.text = "$%.2f".format(total)
+
+        unitCost = priceInput.text.toString().toFloat()
+        unitQuantity = quantityInput.text.toString().toFloat()
+        totalNetCost = unitCost*unitQuantity
+        taxAmount = totalNetCost*(SALES_TAX_RATE/100)
+
+        totalCost = totalNetCost+taxAmount;
+
+
+        totalPriceText.text = "$%.2f".format(totalCost)
+        detailedPriceText.text = "$%.2f + %"
     }
 
 }
