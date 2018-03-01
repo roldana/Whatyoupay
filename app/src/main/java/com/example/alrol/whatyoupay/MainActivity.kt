@@ -44,10 +44,11 @@ class MainActivity : AppCompatActivity() {
         plusButton = findViewById(R.id.plusButton)
 
         var inputArray = initRows()
-
-
+        
         doneButton.setOnClickListener{
-            calculate()
+            if(priceInput.text.toString() != "") {
+                calculate()
+            }
         }
 
         plusButton.setOnClickListener {
