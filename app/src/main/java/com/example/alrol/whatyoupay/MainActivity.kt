@@ -46,8 +46,9 @@ class MainActivity : AppCompatActivity() {
         var inputArray = initRows()
         
         doneButton.setOnClickListener{
-            if(priceInput.text.toString() != "") {
-                calculate()
+            if(priceInput.text.isNotBlank() && priceInput.text.isNotBlank()) {
+                var itemArr = getInput(inputArray)
+                calculate(itemArr)
             }
         }
 
@@ -61,16 +62,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun calculate() {
-        var unitQuantity : Float
-        var unitCost : Float
-        var totalTax : Float
-        var totalNetCost : Float
-        var totalCost : Float
+    private fun getInput(rows: Array<EditText>): List<Item> {
 
-        unitCost = priceInput.text.toString().toFloat()
-        unitQuantity = quantityInput.text.toString().toFloat()
-        totalNetCost = unitCost*unitQuantity
+        var itemArr = mutableListOf<Item>()
+        var firstItem = Item(priceInput.text.toString().toFloat(),quantityInput.text.toString().toFloat())
+        itemArr.add(firstItem)
+
+        var item : Item
+        var i = 0
+        while (i < rows.size){
+            if(rows[i].text.isNotBlank() && rows[i+1].text.isNotBlank()) {
+                item = Item(rows[i].text.toString().toFloat(),rows[i+1].text.toString().toFloat())
+                itemArr.add(item)
+            }
+            i+=2
+
+        }
+
+        return itemArr
+    }
+
+    private fun calculate(items: List<Item>) {
+        var totalTax : Float
+        var totalNetCost = 0f
+        var totalCost : Float
+        var netCost : Float
+
+        for (item in items) {
+            netCost = item.unitCost * item.quantity
+            totalNetCost+=netCost
+        }
+
         totalTax = totalNetCost*(SALES_TAX_RATE/100)
         totalCost = totalNetCost+totalTax
 
@@ -97,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         quantityInput6 = findViewById(R.id.quantityInput6)
         priceInput6 = findViewById(R.id.priceInput6)
 
-        var arr = arrayOf(quantityInput2, priceInput2,quantityInput3, priceInput3,quantityInput4, priceInput4,quantityInput5, priceInput5,quantityInput6, priceInput6)
+        var arr = arrayOf(quantityInput2, priceInput2 ,quantityInput3, priceInput3,quantityInput4, priceInput4,quantityInput5, priceInput5,quantityInput6, priceInput6)
         return arr
     }
 
