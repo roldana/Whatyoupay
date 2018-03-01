@@ -1,11 +1,15 @@
 package com.example.alrol.whatyoupay
 
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.content.Context.INPUT_METHOD_SERVICE
+import android.view.inputmethod.InputMethodManager
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,11 +48,13 @@ class MainActivity : AppCompatActivity() {
         plusButton = findViewById(R.id.plusButton)
 
         var inputArray = initRows()
-        
+
         doneButton.setOnClickListener{
             if(priceInput.text.isNotBlank() && priceInput.text.isNotBlank()) {
                 var itemArr = getInput(inputArray)
                 calculate(itemArr)
+                val inputManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                inputManager.hideSoftInputFromWindow(priceInput.windowToken,0)
             }
         }
 
@@ -59,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             addRow(inputArray)
 
         }
-
     }
 
     private fun getInput(rows: Array<EditText>): List<Item> {
@@ -76,9 +81,7 @@ class MainActivity : AppCompatActivity() {
                 itemArr.add(item)
             }
             i+=2
-
         }
-
         return itemArr
     }
 
