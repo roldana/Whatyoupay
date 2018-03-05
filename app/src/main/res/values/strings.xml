@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">What you pay</string>
+
+    <string-array name="provinces_territories_array">
+        <item>Alberta (5%)</item>
+        <item>British Columbia (12%)</item>
+        <item>Manitoba (13%)</item>
+        <item>New Brunswick (15%)</item>
+        <item>Newfoundland and Labrador (15%)</item>
+        <item>NW Territories (5%)</item>
+        <item>Nova Scotia (15%)</item>
+        <item>Nunavut (5%)</item>
+        <item>Ontario (13%)</item>
+        <item>PEI (15%)</item>
+        <item>Québec (14.975%)</item>
+        <item>Saskatchewan (11%)</item>
+        <item>Yukon (5%)</item>
+        <item>Other...</item>
+
+    </string-array>
 </resources>

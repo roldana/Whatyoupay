@@ -4,16 +4,22 @@ import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.content.Context.INPUT_METHOD_SERVICE
+import android.util.Log
 import android.view.inputmethod.InputMethodManager
+import android.widget.*
+import android.widget.AdapterView
+import android.widget.Toast
+import android.widget.AdapterView.OnItemSelectedListener
+
+
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val SALES_TAX_RATE : Float = 13f
+    private var salesTaxRate : Float = 13f
+    private val taxRateArr = floatArrayOf(5f,12f,13f,15f,15f,5f,15f,5f,13f,15f,14.975f,11f,5f)
+
 
     private lateinit var totalPriceText : TextView
     private lateinit var priceInput: EditText
@@ -22,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var detailedPriceText : TextView
     private lateinit var plusButton: Button
     private var rowsAdded: Int = 0
+    private lateinit var taxRateSpinner: Spinner
 
     private lateinit var quantityInput2: EditText
     private lateinit var priceInput2: EditText
@@ -46,6 +53,27 @@ class MainActivity : AppCompatActivity() {
         doneButton = findViewById(R.id.doneButton)
         detailedPriceText = findViewById(R.id.breakdown)
         plusButton = findViewById(R.id.plusButton)
+        taxRateSpinner = findViewById(R.id.taxRateSpinner)
+
+        var spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.provinces_territories_array,android.R.layout.simple_spinner_item)
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        taxRateSpinner.adapter = spinnerAdapter
+        //set default selection to Ontario
+        taxRateSpinner.setSelection(8)
+        taxRateSpinner.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View,
+                                        pos: Int, id: Long) {
+                changeTaxRate(taxRateArr[pos])
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                // TODO Auto-generated method stub
+            }
+        }
+
+
+
 
         var inputArray = initRows()
 
@@ -96,7 +124,7 @@ class MainActivity : AppCompatActivity() {
             totalNetCost+=netCost
         }
 
-        totalTax = totalNetCost*(SALES_TAX_RATE/100)
+        totalTax = totalNetCost*(salesTaxRate/100)
         totalCost = totalNetCost+totalTax
 
         displayTotal(totalCost, totalNetCost, totalTax)
@@ -107,6 +135,10 @@ class MainActivity : AppCompatActivity() {
         detailedPriceText.text = "$%.2f + $%.2f tax".format(totalNetCost,totalTax)
         detailedPriceText.visibility = View.VISIBLE
 
+    }
+
+    private fun changeTaxRate(newRate: Float){
+        salesTaxRate = newRate
     }
 
 
@@ -122,8 +154,7 @@ class MainActivity : AppCompatActivity() {
         quantityInput6 = findViewById(R.id.quantityInput6)
         priceInput6 = findViewById(R.id.priceInput6)
 
-        var arr = arrayOf(quantityInput2, priceInput2 ,quantityInput3, priceInput3,quantityInput4, priceInput4,quantityInput5, priceInput5,quantityInput6, priceInput6)
-        return arr
+        return arrayOf(quantityInput2, priceInput2 ,quantityInput3, priceInput3,quantityInput4, priceInput4,quantityInput5, priceInput5,quantityInput6, priceInput6)
     }
 
     private fun addRow(array: Array<EditText>){
@@ -134,3 +165,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
